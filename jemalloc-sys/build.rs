@@ -216,7 +216,8 @@ fn main() {
     .env("CFLAGS", cflags.clone())
     .env("LDFLAGS", cflags.clone())
     .env("CPPFLAGS", cflags.clone())
-    .arg("--disable-cxx");
+    .arg("--disable-cxx")
+    .arg("--with-malloc-conf=percpu_arena:percpu");
 
     if target.contains("ios") {
         // newer iOS deviced have 16kb page sizes:
